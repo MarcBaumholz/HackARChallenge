@@ -5,48 +5,21 @@ using  MagicLeap.Examples;
 
 public class clickableObject : MonoBehaviour
 {
-    private GameObject alternativeGO = null;
-    private bool _visibility=false;
+    public GameObject redBall;
+    public GameObject greyBall;
 
-    private void ShowDetails(bool active)
-        {
-            if (_details != null)
-            {
-                _details.SetActive(active);
-            }
-        }
-    public override void Hover()
-        {
-            base.Hover();
+    //RaycastHit hitData;
+    //GameObject hitObject = hitData.transform.gameObject;
 
-            onClickOpen(_isHover);
-        }
-    private void ClickOpen(bool _visibility)
-    {    
-            if (alternativeGO != null)
-            {
-                alternativeGO.SetActive(_visibility);
-            }
-    }
-    public void clickClose()
+    public void onClick()
     {
-            _visibility = false;
-            alternativeGO.SetActive(_visibility);
+        greyBall.SetActive(true);
     }
-
-    public void onClickOpen()
-    {    
-            _visibility = true;
-            alternativeGO.SetActive(_visibility);
-    }
-    
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        _visibility = false;
-        alternativeGO.SetActive(_visibility);
+        greyBall.SetActive(false);// init
     }
 
     // Update is called once per frame
